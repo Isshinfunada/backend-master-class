@@ -1,0 +1,14 @@
+version: "2"
+sql:
+  - name: "db"                      # パッケージ名 (任意)
+    schema: "./db/migration/"       # スキーマファイル
+    queries: "./db/query/"          # クエリファイル
+    engine: "postgresql"            # データベースエンジン
+    gen:
+      go:                          # Goの生成設定
+        package: "db"
+        out: "./db/sqlc"           # 出力先ディレクトリ
+        emit_json_tags: true       # 生成オプション
+        emit_prepared_queries: false
+        emit_interface: false
+        emit_exact_table_names: false
