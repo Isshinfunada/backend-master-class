@@ -4,6 +4,8 @@ sql:
     schema: "./db/migration/"       # スキーマファイル
     queries: "./db/query/"          # クエリファイル
     engine: "postgresql"            # データベースエンジン
+    database:
+      sql_package: "pgx/v5/stdlib"
     gen:
       go:                          # Goの生成設定
         package: "db"
